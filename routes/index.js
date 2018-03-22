@@ -51,8 +51,8 @@ function processData () {
     return v
   }))
   if (!counts['-']) {
+    obj.chapters[1].unshift('共'+ ids.length + '章')
     obj.chapters[0].unshift('-')
-    obj.chapters[1].unshift('汇总')
     counts['-'] = tj
   }  
   return obj

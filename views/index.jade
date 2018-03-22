@@ -26,7 +26,7 @@ block content
         a(href="https://b.faloo.com/p/472061/"+id+".html",target="blank")= chapters[1][i]
       each t,index in counts[id]
         if id === '-'
-          div.count= t + '(' + Math.floor(t / (chapters[0].length - 1)) + ')' + (index > 0 ? + '___'+ (t - counts[id][index -1]) :'')
+          div.count= t + '(' + Math.floor(t / (chapters[0].length - 1)) + ')' + (index > 0 ? '___'+ (t - counts[id][index -1]) :'')
         else
           div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t 
         

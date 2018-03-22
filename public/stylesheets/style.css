@@ -1,0 +1,48 @@
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid blue;
+  height: 30px;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;  
+  height: auto;
+
+}
+.wrapper > .wrapper {
+  flex: 1;
+  border-bottom: 1px solid red;
+}
+.novel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.novel > div {
+  text-align: left;
+  vertical-align: middle;
+  height: 30px;
+}
+.row > div {
+  vertical-align: middle;
+}
+.id {
+  width: 40px;
+}
+.name {
+  width: 300px;
+}
+.count {
+  flex: 1;
+}

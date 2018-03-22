@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  div.wrapper
+    div.id
+    div.name
+    div.wrapper
+      each t,i in headers
+        if i>1
+          div.count
+            div.zb= '人气:' + novel[t].RQ
+            div.zb= '鲜花:' + novel[t].FLOWER
+            div.zb= '收藏:' + novel[t].SC
+            div.zb= 'v收:' + novel[t].VS  
+  div.row
+    div.id=headers[0]
+    div.name=headers[1]
+    each t,i in headers
+      if i>1
+        div.count= t
+  each id,i in chapters[0]
+    div.row
+      div.id= id
+      div.name= chapters[1][i]
+      each t,index in counts[id]
+        div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) : t

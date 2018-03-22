@@ -50,7 +50,7 @@ function processData () {
   counts['-'] = (cols.map((x,i)=> {
     var v = 0
     ids.forEach(y => {
-      v += counts[y][i]
+      v += counts[y] ? counts[y][i] : 0
     })
     return v
   }))

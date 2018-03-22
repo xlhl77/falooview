@@ -51,8 +51,8 @@ function processData () {
     return v
   }))
   if (!counts['-']) {
-    obj.chapters[0].push('-')
-    obj.chapters[1].push('汇总')
+    obj.chapters[0].unshift('-')
+    obj.chapters[1].unshift('汇总')
     counts['-'] = tj
   }  
   return obj

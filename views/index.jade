@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  a(href="http://b.faloo.com/f/472061.html")= title
+  a(href="http://b.faloo.com/f/472061.html",target="blank")= title
   div.wrapper
     div.id
     div.name
@@ -15,7 +15,8 @@ block content
             div.zb= 'v收:' + novel[t].VS  
   div.row
     div.id=headers[0]
-    div.name=headers[1]
+    div.name
+      a(href="https://b.faloo.com/p/472061/"+header[0]+".html",target="blank")=headers[1]
     each t,i in headers
       if i>1
         div.count= t

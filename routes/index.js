@@ -43,17 +43,17 @@ function processData () {
     counts: counts
   }
   //增加汇总
-  // if (!obj.counts['100000']) {
-  //   obj.chapters[0].push(100000)
-  //   obj.chapters[1].push('汇总')
-  // }
-  // obj.counts['100000'] = (cols.map((x,i)=> {
-  //   var v = 0
-  //   for (var y = 0; y= ids.length - 1; y++) {
-  //     v += counts[y][i]
-  //   }
-  //   return v
-  // }))
+  if (!counts['-']) {
+    obj.chapters[0].push('-')
+    obj.chapters[1].push('汇总')
+  }
+  counts['-'] = (cols.map((x,i)=> {
+    var v = 0
+    ids.forEach(y => {
+      v += counts[y][i]
+    })
+    return v
+  }))
   return obj
 }
 module.exports = router;

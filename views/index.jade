@@ -25,8 +25,8 @@ block content
       div.id= id
       div.name= chapters[1][i]
       each t,index in counts[id]
-        if id = '-'
-          div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t + '(' + t / (chapters[0].length - 1) + ')'
+        if id === '-'
+          div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t + '(' + Math.floor(t / (chapters[0].length - 1)) + ')'
         else
           div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t 
         

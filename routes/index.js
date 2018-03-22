@@ -43,17 +43,18 @@ function processData () {
     counts: counts
   }
   //增加汇总
-  if (!counts['-']) {
-    obj.chapters[0].push('-')
-    obj.chapters[1].push('汇总')
-  }
-  counts['-'] = (cols.map((x,i)=> {
+  var tj = (cols.map((x,i)=> {
     var v = 0
     ids.forEach(y => {
       v += counts[y] ? counts[y][i] : 0
     })
     return v
   }))
+  if (!counts['-']) {
+    obj.chapters[0].push('-')
+    obj.chapters[1].push('汇总')
+    obj.chapters.counts['-'] = tj
+  }  
   return obj
 }
 module.exports = router;

@@ -53,7 +53,7 @@ function processData () {
   if (!counts['-']) {
     obj.chapters[0].push('-')
     obj.chapters[1].push('汇总')
-    obj.chapters.counts['-'] = tj
+    counts['-'] = tj
   }  
   return obj
 }

@@ -30,7 +30,7 @@ function processData () {
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
   var counts = {}
   ids.forEach(x => {
-    counts[x] = cols.map((c) => novels.chapters[c][x] ? novels.chapters[c][x].count : 0)
+    counts[x] = cols.map((c) => (novels.chapters[c] && novels.chapters[c][x]) ? novels.chapters[c][x].count : 0)
   })
   var obj = {
     title: novels.title,

@@ -8,6 +8,7 @@ a {
 }
 
 .row {
+  display: -webkit-flex;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid blue;
@@ -15,16 +16,22 @@ a {
   align-items: center;
 }
 .wrapper {
+  display: -webkit-flex;
   display: flex;
   flex-direction: row;  
   height: auto;
-
+}
+@media screen and (max-width: 960px) {
+  .wrapper {
+    flex-direction: column;
+  }
 }
 .wrapper > .wrapper {
   flex: 1;
   border-bottom: 1px solid red;
 }
 .novel {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;

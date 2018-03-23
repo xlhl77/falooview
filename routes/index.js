@@ -25,25 +25,29 @@ function retrieve () {
 }
 
 function processData () {
-  var cols = Object.keys(novels.novel)
+  // 日期
+  var days = Object.keys(novels.novel)
   var chapters = novels.chapters
+  // 章节ID
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
+  // 章节名
+  var names = Array.isArray(chapters.today) ? ids.map(x => chapters[x].name): ids.map(x => chapters.today[x].name),
   var counts = {}
   ids.forEach(x => {
-    counts[x] = cols.map((c) => (novels.chapters[c] && novels.chapters[c][x]) ? novels.chapters[c][x].count : 0)
+    counts[x] = days.map((c) => (novels.chapters[c] && novels.chapters[c][x]) ? novels.chapters[c][x].count : 0)
   })
   var obj = {
     title: novels.title,
-    headers: ['章节ID','章节名称'].concat(cols),
+    headers: ['章节ID','章节名称'].concat(days),
     novel: novels.novel,
     chapters: [
       ids,
-      Array.isArray(chapters.today) ? ids.map(x => chapters[cols[0]][x].name): ids.map(x => chapters.today[x].name),
+      names
     ],
     counts: counts
   }
   //增加汇总
-  var tj = (cols.map((x,i)=> {
+  var tj = (days.map((x,i)=> {
     var v = 0
     ids.forEach(y => {
       v += counts[y] ? counts[y][i] : 0

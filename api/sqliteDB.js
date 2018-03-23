@@ -81,7 +81,7 @@ class HandleDB {
             _self.db[mode](sql, param,
                 function (err, data) {    // data: Array, Object
                   // 执行语句后关闭连接
-                  _self.db.close();
+                //   _self.db.close();
                     if (err) {
                         reject(new Error(err));
                     } else {

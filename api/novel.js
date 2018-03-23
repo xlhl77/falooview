@@ -69,14 +69,16 @@ function getNovel(id) {
 }
 
 var sqliteDB = require('./sqliteDB')
+
+var dbFile = './data/472061.db'
 var db = new sqliteDB({
-  databaseFile: './data/472061.db'
+  databaseFile: dbFile
 })
 
 function prepareDB(path) {
   db.databaseFile = path
   return db.connectDatabase()
-  .then(() => {
+  .then((msg) => {
     // 创建表
     var sql = `
     create table if not exists chapters (
@@ -109,17 +111,14 @@ function saveChapter(data) {
 }
 
 function save(data) {
-  prepareDB('./data/472061.db')
+  prepareDB(dbFile)
   .then(() => saveNovel(data.novel))
-  .then(() => {
-    return prepareDB('./data/472061.db')
-    .then(() => saveChapter(data.chapter))
-  })
+  .then(() => saveChapter(data.chapter))
 }
 
 function query() {
   var sql ='select id ,name, rq, cnt from chapters where rq >= ?;'
-  return prepareDB('./data/472061.db')
+  return prepareDB(dbFile)
   .then(() => {
     return db.sql(sql, '' + formatDate(-7), 'all')
   })

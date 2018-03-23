@@ -23,12 +23,12 @@ global.novels = {
 }
 
 // 每10分钟检索一次最新数据
-schedule.scheduleJob('*/10 * * * *', function(){
-  fetcher.get(472061).then(result => {
-    novels.novel.today = result.novel
-    novels.chapters.today = result.chapter
-  })
-});
+// schedule.scheduleJob('*/10 * * * *', function(){
+//   fetcher.get(472061).then(result => {
+//     novels.novel.today = result.novel
+//     novels.chapters.today = result.chapter
+//   })
+// });
 // 每天12点保存最新数据道当天
 schedule.scheduleJob('0 0 0 * * *', function(){
   fetcher.get(472061).then(fetcher.save)

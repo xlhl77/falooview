@@ -26,7 +26,7 @@ function retrieve () {
 
 function processData () {
   var cols = Object.keys(novels.novel)
-  var chapters = novels.chapters.today
+  var chapters = novels.chapters
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
   var counts = {}
   ids.forEach(x => {
@@ -38,7 +38,7 @@ function processData () {
     novel: novels.novel,
     chapters: [
       ids,
-      ids.map(x => chapters[x].name),
+      Array.isArray(chapters.today) ? ids.map(x => chapters[cols[0]][x].name): ids.map(x => chapters.today[x].name),
     ],
     counts: counts
   }

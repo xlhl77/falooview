@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 function retrieve () {
   var dt = new Date().valueOf()
-  if (!novels.ing && (dt - novels.lasttime >= 6000000)) {
+  if (!novels.ing && (dt - novels.lasttime >= 1200000)) {
     novels.ing = true
     fetcher.get(472061)
     .then(function (data) {

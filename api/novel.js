@@ -111,7 +111,10 @@ function saveChapter(data) {
 function save(data) {
   prepareDB('./data/472061.db')
   .then(() => saveNovel(data.novel))
-  .then(() => saveChapter(data.chapter))
+  .then(() => {
+    return prepareDB('./data/472061.db')
+    .then(() => saveChapter(data.chapter))
+  })
 }
 
 function query() {

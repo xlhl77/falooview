@@ -31,7 +31,7 @@ function processData () {
   // 章节ID
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
   // 章节名
-  var names = ids.map(id => chapters.today[id] && chapters.today[id].name || chapters[days[0]][id].name)
+  var names = ids.map(id => (chapters.today[id] && chapters.today[id].name) || chapters[days[0]][id].name)
   var counts = {}
   ids.forEach(x => {
     counts[x] = days.map((c) => (novels.chapters[c] && novels.chapters[c][x]) ? novels.chapters[c][x].count : 0)

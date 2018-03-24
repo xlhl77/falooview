@@ -111,6 +111,10 @@ function saveChapter(data) {
 }
 
 function save(data) {
+  var rq = '' + formatDate()
+  novels.novel[rq] = data.novel
+  novels.chapters[rq] = data.chapter
+  
   prepareDB(dbFile)
   .then(() => saveNovel(data.novel))
   .then(() => saveChapter(data.chapter))

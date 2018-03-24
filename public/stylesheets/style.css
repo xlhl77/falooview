@@ -12,7 +12,7 @@ a {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid blue;
-  height: 30px;
+  min-height: 30px;
   align-items: center;
 }
 .wrapper {
@@ -25,6 +25,9 @@ a {
 @media screen and (max-width: 960px) {
   .wrapper {
     flex-direction: column;
+  }
+  .row {
+    height: auto;
   }
 }
 .wrapper > .wrapper {

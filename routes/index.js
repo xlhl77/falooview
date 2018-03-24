@@ -30,7 +30,7 @@ function processData () {
   var chapters = Array.isArray(novels.chapters.today) ? novels.chapters[days[0]] : novels.chapters.today
   // 章节ID
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
-  console.log(chapters)
+
   // 章节名
   var names = ids.map(id => chapters[id].name)
   var counts = {}

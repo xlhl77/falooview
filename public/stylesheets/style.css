@@ -52,8 +52,10 @@ a {
   width: 40px;
 }
 .name {
-  width: 300px;
+  flex: 1;
+  max-width: 300px;
 }
 .count {
   flex: 1;
+  min-width: 150px;
 }

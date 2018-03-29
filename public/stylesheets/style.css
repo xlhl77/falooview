@@ -29,6 +29,10 @@ a {
   .row {
     height: auto;
   }
+
+  .novel >div {
+    height: auto;
+  }
 }
 .wrapper > .wrapper {
   flex: 1;

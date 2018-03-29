@@ -70,5 +70,5 @@ var cheerio = require('cheerio')
 // }
 
 module.exports = function login() {
-return 'UU12345678=uuc=131570317744128494; last_novel10=472061; last_node10=49; curr_url=https%3A//b.faloo.com/f/472061.html; ASP.NET_SessionId=zdvndy55eymvita0vyxpewu5; verify_code=BF6D81BCF9AA85A99FFCF00E25FCFC2E; host4chongzhi=b.faloo.com; KeenFire=UserID=xlhl77&Pwd=a89b8141ce15dc5a0c41b304cad5ac1c&NickName=%e5%82%bb%e7%99%bd%e7%94%9c&Identity=43178.4817737384'
+return 'UU12345678=uuc=131570317744128494; last_novel10=472061; last_node10=49; curr_url=https%3A//b.faloo.com/authorlogin.aspx; curr_url4wap=https%3A//wap.faloo.com/; host4chongzhi=b.faloo.com; ASP.NET_SessionId=zdvndy55eymvita0vyxpewu5; verify_code=E957DE75835EEAAA4318C81638EE002E; KeenFire=UserID=xlhl77&Pwd=959c6ad06de50bab7da54250493d6eda&NickName=%e5%82%bb%e7%99%bd%e7%94%9c&Identity=43189.2792250694'
 }

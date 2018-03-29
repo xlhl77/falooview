@@ -29,26 +29,12 @@ a {
   .row {
     height: auto;
   }
-
-  .novel >div {
-    height: auto;
-  }
 }
 .wrapper > .wrapper {
   flex: 1;
   border-bottom: 1px solid red;
 }
-.novel {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.novel > div {
-  text-align: left;
-  vertical-align: middle;
-  height: 30px;
-}
+
 .row > div {
   vertical-align: middle;
 }

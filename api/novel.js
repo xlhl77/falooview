@@ -112,7 +112,7 @@ function saveChapter(data) {
 
 function save(data) {
   var rq = '' + formatDate()
-  if (novels) {
+  if (global.novels) {
     novels.novel[rq] = data.novel
     novels.chapters[rq] = data.chapter
   }

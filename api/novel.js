@@ -123,7 +123,7 @@ function save(data) {
 }
 
 function query() {
-  var sql ='select id ,name, rq, cnt from chapters where rq >= ?;'
+  var sql ='select id ,name, rq, cnt from chapters where rq > ?;'
   return prepareDB(dbFile)
   .then(() => {
     return db.sql(sql, '' + formatDate(-7), 'all')

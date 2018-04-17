@@ -2,7 +2,7 @@ extends layout
 
 block content
   a(href="http://b.faloo.com/f/472061.html",target="blank")= title
-  div.row
+  div
     div.id
     div.name
     div.wrapper
@@ -13,7 +13,7 @@ block content
             div.zb= '鲜花:' + novel[t].FLOWER
             div.zb= '收藏:' + novel[t].SC
             div.zb= 'v收:' + novel[t].VS  
-  div.row
+  div
     div.id=headers[0]
     div.name=headers[1]
     div.wrapper
@@ -21,7 +21,7 @@ block content
         if i>1
           div.count= t
   each id,i in chapters[0]
-    div.row
+    div
       div.id= id
       div.name
         a(href="https://b.faloo.com/p/472061/"+id+".html",target="blank")= chapters[1][i]

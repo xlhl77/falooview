@@ -7,7 +7,7 @@ a {
   color: #00B7FF;
 }
 
-.row {
+body>div {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
@@ -26,7 +26,7 @@ a {
   .wrapper {
     flex-direction: column;
   }
-  .row {
+  body>div {
     height: auto;
   }
 }
@@ -35,7 +35,7 @@ a {
   border-bottom: 1px solid red;
 }
 
-.row > div {
+.body>div> div {
   vertical-align: middle;
 }
 .id {

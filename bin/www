@@ -36,8 +36,8 @@ schedule.scheduleJob('0 0 0 * * *', function(){
 
 // 查询数据库，初始化数据
 fetcher.query().then(result => {
-  Object.assign(novels.novel, result.novel)
-  Object.assign(novels.chapters, result.chapter)
+  novels.novel = result.novel
+  novels.chapters = result.chapter
 })
 
 /**

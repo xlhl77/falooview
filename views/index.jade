@@ -8,7 +8,7 @@ block content
     div.wrapper
       each t,i in headers
         if i>1
-          div.count
+          div
             div.zb= '人气:' + novel[t].RQ
             div.zb= '鲜花:' + novel[t].FLOWER
             div.zb= '收藏:' + novel[t].SC
@@ -19,7 +19,7 @@ block content
     div.wrapper
       each t,i in headers
         if i>1
-          div.count= t
+          div= t
   each id,i in chapters[0]
     div
       div.id= id
@@ -28,7 +28,7 @@ block content
       div.wrapper
         each t,index in counts[id]
           if id === '-'
-            div.count= t + '(' + Math.floor(t / (chapters[0].length - 1)) + ')' + (index > 0 ? '___'+ (t - counts[id][index -1]) :'')
+            div= t + '(' + Math.floor(t / (chapters[0].length - 1)) + ')' + (index > 0 ? '___'+ (t - counts[id][index -1]) :'')
           else
-            div.count= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t 
+            div= index > 0 ? t + '___'+ (t - counts[id][index -1]) :t 
         

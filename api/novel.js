@@ -26,6 +26,7 @@ var arr = {}
         }).then(()=> {return getChapter(obj, page, count)})
       }
     })
+    .catch(() => {})
  }
 
 function getPages(ele) {
@@ -66,6 +67,7 @@ function getNovel(id) {
    }
    return getChapter(obj.chapter)
  }).then(() => obj)
+ .catch(err => {})
 }
 
 var sqliteDB = require('./sqliteDB')

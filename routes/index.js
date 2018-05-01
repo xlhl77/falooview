@@ -20,6 +20,9 @@ function retrieve () {
       novels.chapters.today = data.chapter
       novels.lasttime = new Date().valueOf()
     })
+    .catch(() => {
+      novels.ing = false
+    })
   }
   return processData()
 }

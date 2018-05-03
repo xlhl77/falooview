@@ -31,7 +31,13 @@ global.novels = {
 // });
 // 每天12点保存最新数据道当天
 schedule.scheduleJob('0 0 0 * * *', function(){
-  fetcher.get(472061).then(fetcher.save)
+  fetcher.get(472061)
+  .then(fetcher.save)
+  .then(fetcher.query)
+  .then(result => {
+    novels.novel = result.novel
+    novels.chapters = result.chapter
+  })
 });
 
 // 查询数据库，初始化数据

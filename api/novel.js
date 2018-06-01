@@ -30,7 +30,7 @@ var arr = {}
  }
 
 function getPages(ele) {
-  var pages = ele('#PageListBTop>tr>td>a').length - 1
+  var pages = ele('#PageListBTop>tbody>tr>td>a').length - 1
   return pages
 }
 

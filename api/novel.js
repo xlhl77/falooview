@@ -30,21 +30,21 @@ var arr = {}
  }
 
 function getPages(ele) {
-  var pages = ele('#PageListBTop>tbody>tr>td>font>a').length - 1
+  var pages = ele('#PageListBTop>tr>td>a').length - 1
   return pages
 }
 
 function getChapterData(ele, arr) {
-      var chapter = ele('#DgArticle>tbody>tr').slice(1)
-      chapter.each((i,row) => {
-        var c = $(row).children('td')
-        var obj = {
-          id: Number(c.eq(0).text()),
-          name: c.eq(1).text(),
-          count: Number(c.eq(3).text())
-        }
-        arr[obj.id] = obj
-      })  
+  var chapter = ele('#DgArticle>tbody>tr').slice(1)
+  chapter.each((i,row) => {
+    var c = $(row).children('td')
+    var obj = {
+      id: Number(c.eq(0).text()),
+      name: c.eq(1).text(),
+      count: Number(c.eq(3).text())
+    }
+    arr[obj.id] = obj
+  })  
 }
 
 function getNovel(id) {

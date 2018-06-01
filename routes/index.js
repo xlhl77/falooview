@@ -14,7 +14,7 @@ function retrieve () {
   if (!novels.ing && (dt - novels.lasttime >= 120000)) {
     novels.ing = true
     fetcher.get(472061)
-    .then(function (data) {
+    .then(data => {
       novels.ing = false
       novels.novel.today = data.novel
       novels.chapters.today = data.chapter
@@ -33,7 +33,7 @@ function processData () {
   var chapters = Array.isArray(novels.chapters.today) ? novels.chapters[days[0]] : novels.chapters.today
   // 章节ID
   var ids = Object.keys(chapters).sort((a,b)=>b-a)
-
+console.log(novels)
   // 章节名
   var names = ids.map(id => chapters[id].name)
   var counts = {}

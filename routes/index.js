@@ -10,21 +10,33 @@ router.get('/', function(req, res, next) {
 });
 
 function retrieve () {
-  var dt = new Date().valueOf()
-  if (!novels.ing && (dt - novels.lasttime >= 120000)) {
-    novels.ing = true
-    fetcher.get(472061)
-    .then(data => {
-      novels.ing = false
-      novels.novel.today = data.novel
-      novels.chapters.today = data.chapter
-      novels.lasttime = new Date().valueOf()
-    })
-    .catch(() => {
-      novels.ing = false
-    })
-  }
+  query().then(() => {
+    var dt = new Date().valueOf()
+    if (!novels.ing && (dt - novels.lasttime >= 120000)) {
+      novels.ing = true
+      fetcher.get(472061)
+      .then(data => {
+        novels.ing = false
+        novels.novel.today = data.novel
+        novels.chapters.today = data.chapter
+        novels.lasttime = new Date().valueOf()
+      })
+      .catch(() => {
+        novels.ing = false
+      })
+    }
+  })
   return processData()
+}
+
+function query () {
+  var dt = fetcher.formatDate()
+  if (Object.keys(novels.novel).indexOf('' + dt) !== -1) return Promise.resolve()
+  // 查询数据库，初始化数据
+  return fetcher.query().then(result => {
+    novels.novel = result.novel
+    novels.chapters = result.chapter
+  })  
 }
 
 function processData () {

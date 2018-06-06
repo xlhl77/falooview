@@ -167,5 +167,6 @@ function formatDate (days) {
 module.exports = {
   get: getNovel,
   query: query,
-  save: save
+  save: save,
+  formatDate: formatDate
 }

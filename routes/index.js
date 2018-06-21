@@ -31,9 +31,9 @@ function retrieve () {
 
 function query () {
   if (novels.query) return Promise.resolve()
+  novels.query = true
   // 查询数据库，初始化数据
   return fetcher.query().then(result => {
-    novels.query = true
     novels.novel = result.novel
     novels.chapters = result.chapter
   })  

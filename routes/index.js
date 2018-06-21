@@ -30,8 +30,9 @@ function retrieve () {
 }
 
 function query () {
-  if (novels.query) return Promise.resolve()
-  novels.query = true
+  var dt = fetcher.formatDate()
+  if (novels.query === dt) return Promise.resolve()
+  novels.query = dt
   // 查询数据库，初始化数据
   return fetcher.query().then(result => {
     novels.novel = result.novel

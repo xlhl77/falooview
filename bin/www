@@ -11,7 +11,7 @@ var debug = require('debug')('falooview:server');
 var http = require('http');
 
 global.novels = {
-  query: false,
+  query: 0,
   ing: false,
   lasttime: 0,
   title:'网游三国之无双帝姬',

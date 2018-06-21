@@ -30,10 +30,10 @@ function retrieve () {
 }
 
 function query () {
-  var dt = fetcher.formatDate()
-  if (Object.keys(novels.novel).indexOf('' + dt) !== -1) return Promise.resolve()
+  if (novels.query) return Promise.resolve()
   // 查询数据库，初始化数据
   return fetcher.query().then(result => {
+    novels.query = true
     novels.novel = result.novel
     novels.chapters = result.chapter
   })  

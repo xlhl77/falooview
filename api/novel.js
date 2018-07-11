@@ -43,7 +43,9 @@ function getChapterData(ele, arr) {
       count: Number(c.eq(3).text())
     }
     arr[obj.id] = obj
-  })  
+  })
+  chapter = null
+  $ = null  
 }
 
 function getNovel(id) {

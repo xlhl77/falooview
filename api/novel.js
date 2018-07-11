@@ -66,6 +66,7 @@ function getNovel(id) {
      FLOWER: Number($(novel[3]).text()),
      RQ: Number($(novel[4]).text())
    }
+   $ = null
    return getChapter(obj.chapter)
  }).then(() => obj)
  .catch(err => {})

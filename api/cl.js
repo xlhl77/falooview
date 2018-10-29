@@ -16,6 +16,7 @@ function redirect (req, res) {
   getCLUrl().then(result => {
     var $ = cheerio.load(result.text)
     var url = $('#main').text
+    console.log($('#main'), url)
     res.redirect('http://' + url)
   })
 }

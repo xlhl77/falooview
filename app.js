@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var cl = require('api/cl')
+var cl = require('./clapi/cl')
 var app = express();
 
 // view engine setup

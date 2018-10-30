@@ -3,7 +3,7 @@ var request = require('superagent-charset')(require('superagent'))
 
 
 function getCLUrl () {
-  return request.post('get.xunfs.com/app/listapp.php')
+  return request.post('http://get.xunfs.com/app/listapp.php')
   .type('form')
   .send({
     a: 'get',
@@ -14,9 +14,9 @@ function getCLUrl () {
 
 function redirect (req, res) {
   getCLUrl().then(result => {
+    res.set(result.header)
     var $ = cheerio.load(result.text)
-    var url = $('#main').text
-    console.log($('#main'), url)
+    var url = $('#main').text()
     res.redirect('http://' + url)
   })
 }
